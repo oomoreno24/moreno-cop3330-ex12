@@ -33,6 +33,23 @@ In addition to printing out the final amount, print out the amount at the end of
 
 public class App {
     public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.print("Enter the principal: ");
+        String principal = in.nextLine();
+        System.out.print("Enter the rate of interest: ");
+        String rateOfInterest = in.nextLine();
+        System.out.print("Enter the number of years: ");
+        String numYears = in.nextLine();
 
+        // converting strings to floats
+        float P = Float.parseFloat(principal);
+        float r = Float.parseFloat(rateOfInterest)/100;
+        float t = Float.parseFloat(numYears);
+
+        // calculation for simple interest
+        float A = P*(1+(r*t));
+
+        // output
+        System.out.printf("After %d years at %.2f%%, the investment will be worth $%.2f.\n", (int)t, r*100, A);
     }
 }
